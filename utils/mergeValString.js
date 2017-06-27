@@ -1,3 +1,11 @@
+/**
+ *
+ * @param desStr destination string values which need union or intersection
+ * @param compStr the compared string values
+ * @param splitStr string values joined by
+ * @param isUnion if true will union desStr and compStr, if false will intersection
+ * @returns {*}
+ */
 function mergeValString(desStr, compStr, splitStr, isUnion) {
     if (desStr && !compStr) {
         return desStr;
@@ -17,20 +25,17 @@ function mergeValString(desStr, compStr, splitStr, isUnion) {
                     desStrArr.splice(desStrArr.indexOf(val), 1);
                 }
             }
-
-
         });
         return desStrArr.join(splitStr);
-
     }
 }
 
-// var desStr = 'ab,cd,ef';
-var desStr = null;
-// var compStr = 'cd,ss';
-var compStr = null;
+var desStr = 'ab,cd,ef';
+// var desStr = null;
+var compStr = 'cd,ss';
+// var compStr = null;
 var splitStr = ',';
 
-mergeValString(desStr, compStr, splitStr, true);
-mergeValString(desStr, compStr, splitStr, false);
+mergeValString(desStr, compStr, splitStr, true); // "ab,cd,ef,ss"
+mergeValString(desStr, compStr, splitStr, false); // "ab,ef"
 
