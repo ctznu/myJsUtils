@@ -1,5 +1,4 @@
 /**
- *
  * @param desStr destination string values which need union or intersection
  * @param compStr the compared string values
  * @param splitStr string values joined by
